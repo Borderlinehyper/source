@@ -2592,18 +2592,18 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        for (i = 0; i < basicBot.room.roulette.participants.length; i++) {
+                        /*for (i = 0; i < basicBot.room.roulette.participants.length; i++) {
                             if (djname == basicBot.room.roulette.participants.username[i]) {
                                 var index = basicBot.room.roulette.participants.indexOf(i);
                                 if (index > -1) {
                                     basicBot.room.roulette.participants.splice(index, 1);
                                     API.sendChat(subChat("Current DJ in roulette, removing DJ"));
                                 }
-                                if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
-                                    basicBot.room.roulette.participants.push(chat.uid);
-                                    API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
-                                }
                             }
+                        }*/
+                        if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
+                            basicBot.room.roulette.participants.push(chat.uid);
+                            API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                         }
                     }
                 }
