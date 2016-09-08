@@ -2599,11 +2599,11 @@
                                     basicBot.room.roulette.participants.splice(index, 1);
                                     API.sendChat("Current DJ in roulette, removing DJ");
                                 }
+                                if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
+                                    basicBot.room.roulette.participants.push(chat.uid);
+                                    API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
+                                }
                             }
-                        }
-                        if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
-                            basicBot.room.roulette.participants.push(chat.uid);
-                            API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                         }
                     }
                 }
