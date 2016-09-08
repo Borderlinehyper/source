@@ -2597,7 +2597,7 @@
                                 var index = basicBot.room.roulette.participants.indexOf(i);
                                 if (index > -1) {
                                     basicBot.room.roulette.participants.splice(index, 1);
-                                    API.sendChat("Current DJ in roulette, removing DJ");
+                                    API.sendChat(subChat("Current DJ in roulette, removing DJ"));
                                 }
                                 if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
                                     basicBot.room.roulette.participants.push(chat.uid);
